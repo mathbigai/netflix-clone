@@ -1,0 +1,143 @@
+.nav-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+  padding: 20px;
+  z-index: 100;
+
+  /* Animations */
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.nav-logo {
+  position: fixed;
+  left: 20px;
+  width: 80px;
+  object-fit: contain;
+}
+
+.nav-avatar {
+  position: fixed;
+  right: 20px;
+  width: 30px;
+  object-fit: contain;
+}
+
+.nav-container-black {
+  background-color: #111;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.5s;
+  position: fixed;
+  right: 20px;
+
+  object-fit: contain;
+}
+
+.search-all-start,
+.search-all-end {
+  height: 25px;
+  margin-right: 15px;
+  background-color: #000;
+  transition: all ease 0.5s;
+  display: flex;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.search-all-start {
+  background-color: transparent;
+  border: none;
+}
+
+.search-all-end {
+  background-color: #000;
+}
+
+.input-search-nav-start,
+.input-search-nav-end {
+  margin-right: 15px;
+  background-color: transparent;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+
+.input-search-nav-start {
+  width: 0;
+  opacity: 0;
+  transition: all ease 0.5s;
+  margin-right: 5px;
+}
+
+.input-search-nav-end {
+  width: 500px;
+  opacity: 1;
+  transition: all ease 0.5s;
+  margin-right: 5px;
+  margin-left: 26px;
+}
+
+.button-search-end,
+.button-search-start {
+  color: white;
+  background-color: transparent;
+  transition: all ease 0.5s;
+  display: flex;
+  border: none;
+}
+
+.button-search-start {
+  opacity: 0;
+  cursor: auto;
+}
+
+.button-search-end {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.button-imput {
+  color: white;
+  size: 50px;
+  cursor: pointer;
+  left: 2px;
+  position: absolute;
+}
+
+@media screen and (max-width: 760px) {
+  .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0px;
+    transition: all ease 0.5s;
+    position: fixed;
+    right: 20px;
+
+    object-fit: contain;
+  }
+
+  .input-search-nav-start {
+    width: 0;
+    opacity: 0;
+  }
+
+  .input-search-nav-end {
+    width: 140px;
+    opacity: 1;
+  }
+
+  .button-imput {
+    color: white;
+    size: 50px;
+  }
+}

@@ -1,0 +1,184 @@
+.search-container {
+  background-color: #111;
+  color: white;
+}
+
+.search-title {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.search-title span {
+  color: #e50914;
+}
+
+.movie-list-search {
+  margin-left: 15vh;
+  margin-right: 10vh;
+  margin-top: 20px;
+}
+
+.movie-all-search {
+  display: inline-block;
+  position: relative;
+}
+
+.movie-card-search {
+  width: 167px;
+  height: 250px;
+
+  max-height: 250px;
+  margin-bottom: 10px;
+  transition: transform 450ms;
+  padding-right: 20px;
+}
+
+.movie-card-search:hover {
+  transform: scale(1.08);
+}
+
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto;
+
+  object-fit: cover;
+}
+
+.loading img {
+  width: 100px;
+  height: 100px;
+}
+
+.pagination-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.movie-card-search-no-image {
+  width: 167px;
+  height: 250px;
+
+  max-height: 250px;
+  margin-bottom: 10px;
+  transition: transform 450ms;
+  padding-right: 20px;
+}
+
+.movie-card-search-no-image:hover {
+  transform: scale(1.08);
+}
+
+/*Estilo Paginação*/
+
+.pagination li.active {
+  background-color: #e50914;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+ul:not(.browser-default) {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+ul:not(.browser-default) > li {
+  list-style-type: none;
+}
+
+.pagination li {
+  display: inline-block;
+  border-radius: 2px;
+  text-align: center;
+  vertical-align: top;
+  height: 30px;
+}
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.pagination li.active a {
+  color: #fff;
+}
+
+.pagination li a {
+  color: #444;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  line-height: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a {
+  color: #039be5;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.pagination-container {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.arrows a {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+
+.waves-effect:hover a {
+  transition: 0.2s ease-out;
+  background-color: #444;
+  color: white;
+}
+
+.active:hover a {
+  background-color: #e50914;
+  color: white;
+}
