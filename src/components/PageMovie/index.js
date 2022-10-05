@@ -139,9 +139,10 @@ function PageMovieC() {
         linkTrailer.results.length;
         index++
       ) {
-        if ( linkTrailer.results[index].type === "Trailer"){
+        if ( linkTrailer.results[index].type === "Trailer" ){
           lineLinkTeaser = index;
-        }else{
+          break;
+        }else if (linkTrailer.results[index].type === "Trailer" && linkTrailer.results.length === index) {
           lineLinkTeaser = 0;
         }
       }
