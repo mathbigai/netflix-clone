@@ -61,7 +61,7 @@ function PageColectionC() {
             src={`${imageHost + media?.backdrop_path} `}
             alt={media?.title || media?.name || media?.original_name}
           ></img>
-          <div className="border-image-movie" />
+          <div className="border-image-collection" />
         </div>
         
       </div>

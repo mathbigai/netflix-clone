@@ -39,6 +39,7 @@ function PageMovieC() {
       const mediaLogo = await getLogoMedia(id, type);
       const mediaCertificate = await getCertificate(id, type);
       setLogo(mediaLogo.logos[0]);
+      console.log(mediaCredits);
       if (type === "movie") {
         if (dataInfo.status === "Released") {
           if (mediaCertificate.results.length > 1) {
@@ -65,34 +66,38 @@ function PageMovieC() {
           ) {
             if (mediaCertificate.results[index].iso_3166_1 === "BR") {
               lineCertification = index;
-              console.log("Teste 1");
               break;
             } else {
-              console.log("Teste 2");
               lineCertification = 0;
             }
           }
         }
       }
-      console.log(mediaCertificate.results[lineCertification].rating);
       if (type === "movie") {
-        setCertificate(
-          mediaCertificate.results[lineCertification].release_dates[0]
-        );
+        if (mediaCertificate.results.length > 1) {
+          setCertificate(
+            mediaCertificate.results[lineCertification].release_dates[0]
+          );
+        }
       } else {
-        setCertificate(mediaCertificate.results[lineCertification].rating);
+        if (mediaCertificate.results.length > 1) {
+          setCertificate(mediaCertificate.results[lineCertification].rating);
+        }
       }
 
       setCredits(mediaCredits.cast.slice(0, 30));
       if (type !== "tv") {
-        for (
-          let index = 0;
-          mediaCredits.crew[index].job != "Director";
-          index++
-        ) {
-          lineDirector = index + 1;
+        if (mediaCredits.crew.length >= 1) {
+          for (let index = 0; index < mediaCredits.crew.length; index++) {
+            if (mediaCredits.crew[index].job === "Director") {
+              lineDirector = index + 1;
+              break;
+            } else {
+              setDirector("Sem diretor definido");
+            }
+          }
+          setDirector(mediaCredits.crew[lineDirector]);
         }
-        setDirector(mediaCredits.crew[lineDirector]);
       }
 
       if (dataInfo.overview === "") {
