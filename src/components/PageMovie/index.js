@@ -133,12 +133,17 @@ function PageMovieC() {
     } else {
       let lineLinkTeaser = 0;
       const linkTrailer = await getLinkTrailer(id, type);
+      console.log(linkTrailer)
       for (
-        let index = 0;
-        linkTrailer.results[index].type != "Trailer";
+        let index = 0; index < 
+        linkTrailer.results.length;
         index++
       ) {
-        lineLinkTeaser = index + 1;
+        if ( linkTrailer.results[index].type === "Trailer"){
+          lineLinkTeaser = index;
+        }else{
+          lineLinkTeaser = 0;
+        }
       }
       setTrailerUrl(videoHost + linkTrailer.results[lineLinkTeaser].key);
     }
